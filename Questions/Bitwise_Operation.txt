@@ -1,0 +1,41 @@
+1. 특정 비트만 설정 또는 클리어 
+ 한 비트 클리어 (예> 5번 비트)	
+ a &= ~(0x1 << 5);
+ 연속된 여러 비트 클리어 (예> 5, 4, 3번 비트)	
+ a &= ~(0x7 << 3);
+ 떨어져 있는 여러 비트 클리어 (예> 5,3,2번 비트)
+ a &= ~((0x1 << 5) + (0x3 << 2));
+ 한비트 설정 (예> 5번 비트)
+ a |= (0x1 << 5); 
+ 연속된 여러 비트 설정 (예> 5,4,3번 비트) 
+ a |= (0x7 << 3); 
+ 떨어져 있는 여러비트 설정 (예> 5,3,2번 비트) 
+ a |= (0x1 << 5) + (0x3 << 2);
+ 한 비트 반전 (예> 5번 비트)
+ a ^= (0x1 << 5);
+ 연속된 여러 비트 반전 (예> 5,4,3번 비트)
+ a ^= (0x7 << 3);
+ 떨어져 있는 여러 비트 반전 (예> 5,4,2번 비트)
+ a ^= (0x1 << 5) + (0x3 << 2);
+ 비트 검사 (예> 5번 비트)
+ a & (0x1 << 5);
+ 비트 추출 (예> 6,5,4 비트)
+ a = (a >> 4) & 0x7;
+ 
+2. 위의 연산을 매크로로 만들면
+ #define CLEAR_BIT(data, loc)
+ ((data) &= ~(0x1 << (loc)))
+ #define CLEAR_BITS(data, area, loc)
+ ((data) &= ~(arear) << (loc)))
+ #define SET_BIT(data, loc)
+ ((data) |= (0x1 << (loc)))
+ #define SET_BITS(data, area, loc)
+ ((data) |= (area) << (loc))) 
+ #define INVERT_BIT(data, loc)
+ ((data) ^= (0x << (loc))) 
+ #define INVERT_BITS(data, area, loc)
+ ((data) ^= ((area) << (loc))) 
+ #define CHECK_BIT(data, loc) 
+ ((data) & (0x1 << (loc))) 
+ #define EXTRACT_BITS(data, area, loc)
+ (((data >> (loc)) & (area)) 
