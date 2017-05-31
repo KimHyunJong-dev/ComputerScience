@@ -33,5 +33,3 @@
 
 - Euler's Phi Function            오일러 피 함수 
 - Extended Euclidean Algorithm    확장 유클리드 알고리즘 Pass~~
-
-- Dynamic Programming(DP)         다이나믹 프로그래밍
