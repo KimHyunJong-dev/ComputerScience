@@ -1,4 +1,4 @@
-# CS-fundamental
+# Computer Science Fundamental
 
 - Data Structures(DS)
   * 설명 
