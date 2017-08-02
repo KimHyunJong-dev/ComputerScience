@@ -67,7 +67,7 @@ void AppendNode(Node** Head, Node *NewNode)
 // ³ëµå »ðÀÔ.
 void InsertAfter(Node* Current, Node* NewNode)
 {
-	NewNode->NextNode = NewNode->NextNode;
+	NewNode->NextNode = Current->NextNode;
 	Current->NextNode = NewNode;
 }
 
